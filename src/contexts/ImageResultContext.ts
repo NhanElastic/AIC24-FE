@@ -7,6 +7,7 @@ export const ImageResultContext = createContext<
   [
     {
       cluster_name: "L01_V001/2567",
+      url: "https://www.google.com",
       image_list: [
         {
           id: "abc",

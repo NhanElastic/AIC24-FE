@@ -3,14 +3,14 @@
 import SearchImage from "@/components/SearchImage";
 import NavBar from "@/components/NavBar";
 import { ImageResultContext } from "@/contexts/ImageResultContext";
-import { ImageEntity } from "@/types/entities/image.type";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
+import { ClusterEntity } from "@/types/entities/cluster.type";
 
 export default function Home() {
-  const [imageResult, setImageResult] = useState<ImageEntity[]>([]);
+  const [imageResult, setImageResult] = useState<ClusterEntity[]>([]);
 
   const imageResultMemo = useMemo<
-    [ImageEntity[], Dispatch<SetStateAction<ImageEntity[]>>]
+    [ClusterEntity[], Dispatch<SetStateAction<ClusterEntity[]>>]
   >(() => [imageResult, setImageResult], [imageResult, setImageResult]);
 
   return (
@@ -20,8 +20,6 @@ export default function Home() {
         <div className="w-full max-w-screen-lg p-4">
           <ImageResultContext.Provider value={imageResultMemo}>
             <SearchImage />
-
-            <h2 className="mt-4 text-2xl font-bold">Video Thumbnail</h2>
           </ImageResultContext.Provider>
         </div>
       </div>

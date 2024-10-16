@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { ClusterEntity } from "@/types/entities/cluster.type";
 import VideoThumbnailCard from "@/components/VideoThumbnailCard";
+import Link from "next/link";
 
 export interface ClusterViewProps {
   cluster: ClusterEntity;
@@ -17,7 +18,17 @@ export default function ClusterView({ cluster }: ClusterViewProps) {
     <Card>
       <CardHeader>
         <CardTitle>{cluster.cluster_name}</CardTitle>
-        {cluster.url && <CardDescription>{cluster.url}</CardDescription>}
+        {cluster.url && (
+          <CardDescription>
+            <Link
+              href={cluster.url}
+              target="_blank"
+              className="underline underline-offset-2"
+            >
+              {cluster.url}{" "}
+            </Link>
+          </CardDescription>
+        )}
       </CardHeader>
 
       <CardContent>

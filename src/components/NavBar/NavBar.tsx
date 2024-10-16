@@ -20,8 +20,6 @@ export interface NavBarProps extends VariantProps<typeof navBarBreakpoints> {
 }
 
 export default function NavBar({ className, size }: NavBarProps) {
-  console.log(navBarBreakpoints({ size }));
-
   return (
     <div
       className={cn(
