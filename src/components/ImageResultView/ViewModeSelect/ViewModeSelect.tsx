@@ -7,11 +7,15 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
-export default function ViewModeSelect() {
+export interface ViewModeSelectProps {
+  onValueChange?: (value: "moment" | "cluster") => void;
+}
+
+export default function ViewModeSelect({ onValueChange }: ViewModeSelectProps) {
   return (
     <>
-      <Label>View mode</Label>
-      <Select defaultValue="moment">
+      <Label>Organize by</Label>
+      <Select defaultValue="moment" onValueChange={onValueChange}>
         <SelectTrigger>
           <SelectValue />
         </SelectTrigger>

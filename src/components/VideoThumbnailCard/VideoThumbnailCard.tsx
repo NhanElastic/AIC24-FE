@@ -24,7 +24,7 @@ export default function VideoThumbnailCard({
     <Card>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
         <Image
