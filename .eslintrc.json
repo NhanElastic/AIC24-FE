@@ -1,11 +1,23 @@
 {
+  "plugins": ["react", "tailwindcss", "storybook"],
   "extends": [
-    "plugin:eslint/recommended",
+    "eslint:recommended",
     "plugin:react/recommended",
     "next/core-web-vitals",
     "next/typescript",
     "plugin:tailwindcss/recommended",
     "plugin:storybook/recommended",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "settings": {
+    "tailwindcss": {
+      "callees": [
+        "clsx",
+        "cva",
+        "twMerge",
+        "cx",
+        "cn"
+      ]
+    }
+  }
 }
