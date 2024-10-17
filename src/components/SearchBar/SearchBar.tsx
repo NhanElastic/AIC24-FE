@@ -1,5 +1,10 @@
 import { Input } from "@/components/ui/input";
+import { FormEventHandler } from "react";
 
-export default function SearchBar() {
-  return <Input placeholder="Search..." />;
+export interface SearchBarProps {
+  onInput: FormEventHandler<HTMLInputElement>;
+}
+
+export default function SearchBar({ onInput }: SearchBarProps) {
+  return <Input placeholder="Search..." onInput={onInput} />;
 }

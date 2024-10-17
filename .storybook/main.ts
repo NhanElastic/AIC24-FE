@@ -15,6 +15,7 @@ const config: StorybookConfig = {
     options: {},
   },
   env: {
+    IMAGE_API_BASE_URL: "http://selab.nhtlongcs.com:20890/",
     IMAGE_BASE_URL: "http://selab.nhtlongcs.com:20167/preview/",
   }
 };

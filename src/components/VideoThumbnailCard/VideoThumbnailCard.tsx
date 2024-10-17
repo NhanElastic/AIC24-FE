@@ -22,6 +22,7 @@ export default function VideoThumbnailCard({
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
+
       <CardContent>
         <Image
           src={thumbnailUrl}
@@ -29,8 +30,10 @@ export default function VideoThumbnailCard({
           width={320}
           height={180}
           className="max-h-96 w-full rounded-lg"
+          loading="lazy"
         />
       </CardContent>
+
       <CardFooter className="grid grid-cols-2 gap-2">
         <Button>Submit</Button>
         <Button variant="secondary">Find similarity</Button>

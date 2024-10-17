@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import { ImageResultContext } from "@/contexts/ImageResultContext";
 import { Dispatch, SetStateAction, useMemo, useState } from "react";
 import { ClusterEntity } from "@/types/entities/cluster.type";
+import ImageResultView from "@/components/ImageResultView";
 
 export default function Home() {
   const [imageResult, setImageResult] = useState<ClusterEntity[]>([]);
@@ -20,6 +21,7 @@ export default function Home() {
         <div className="w-full max-w-screen-lg p-4">
           <ImageResultContext.Provider value={imageResultMemo}>
             <SearchImage />
+            <ImageResultView />
           </ImageResultContext.Provider>
         </div>
       </div>
