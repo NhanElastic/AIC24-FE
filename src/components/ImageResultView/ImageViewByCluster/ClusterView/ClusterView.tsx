@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ClusterEntity } from "@/types/entities/cluster.type";
-import VideoThumbnailCard from "@/components/VideoThumbnailCard";
+import ImageMomentCard from "../../../ImageMomentCard";
 import Link from "next/link";
 import { getImageUrl } from "@/lib/utils";
 
@@ -35,11 +35,7 @@ export default function ClusterView({ cluster }: ClusterViewProps) {
       <CardContent>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {cluster.image_list.map((image) => (
-            <VideoThumbnailCard
-              key={image.id}
-              title={image.id}
-              thumbnailUrl={getImageUrl(image)}
-            />
+            <ImageMomentCard key={image.id} image={image} />
           ))}
         </div>
       </CardContent>

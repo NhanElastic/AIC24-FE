@@ -7,25 +7,23 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { ImageEntity } from "@/types/entities/image.type";
+import { getImageUrl } from "@/lib/utils";
 
 export interface VideoThumbnailCardProps {
-  title: string;
-  thumbnailUrl: string;
+  image: ImageEntity;
 }
 
-export default function VideoThumbnailCard({
-  title,
-  thumbnailUrl,
-}: VideoThumbnailCardProps) {
+export default function ImageMomentCard({ image }: VideoThumbnailCardProps) {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>{image.id}</CardTitle>
       </CardHeader>
 
       <CardContent>
         <Image
-          src={thumbnailUrl}
+          src={getImageUrl(image)}
           alt=""
           width={320}
           height={180}

@@ -1,4 +1,4 @@
-import SearchBar from ".";
+import SearchBar from "./index";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof SearchBar> = {

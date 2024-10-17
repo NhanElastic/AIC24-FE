@@ -1,5 +1,5 @@
 import { ClusterEntity } from "@/types/entities/cluster.type";
-import VideoThumbnailCard from "@/components/VideoThumbnailCard";
+import ImageMomentCard from "../../ImageMomentCard";
 import ClusterView from "@/components/ImageResultView/ImageViewByCluster/ClusterView";
 
 export interface ImageViewByClusterProps {

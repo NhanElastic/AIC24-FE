@@ -1,27 +1,41 @@
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { ImageResultContext } from "@/contexts/ImageResultContext";
-import ViewModeSelect from "@/components/ImageResultView/ViewModeSelect";
 import ImageViewByCluster from "@/components/ImageResultView/ImageViewByCluster/ImageViewByCluster";
 import ImageViewByMoment from "@/components/ImageResultView/ImageViewByMoment/ImageViewByMoment";
+import { ImageEntity } from "@/types/entities/image.type";
+import { ClusterEntity } from "@/types/entities/cluster.type";
 
 export default function ImageResultView() {
-  const [clusters] = useContext(ImageResultContext);
+  const [imageResult] = useContext(ImageResultContext);
   const [viewMode, setViewMode] = useState<"moment" | "cluster">("moment");
 
-  return (
-    <div className="flex flex-col gap-8">
-      <div>
-        {clusters.length !== 0 && (
-          <div className="my-2 text-3xl font-bold">Video Thumbnail</div>
-        )}
-        <ViewModeSelect onValueChange={setViewMode} />
-      </div>
+  console.log(imageResult);
+  console.log(imageResult[0]);
 
-      {viewMode === "cluster" ? (
-        <ImageViewByCluster clusters={clusters} />
-      ) : (
-        <ImageViewByMoment clusters={clusters} />
-      )}
-    </div>
+  const moments: ImageEntity[] = useMemo(
+    () =>
+      imageResult.map((cluster: ClusterEntity) => cluster.image_list).flat(),
+    [imageResult],
+  );
+
+  console.log(moments[0]);
+
+  const clusters = useMemo(
+    () =>
+      Object.entries(
+        Object.groupBy(moments, (moment) => moment.id.split("/")[0]),
+      ).map(
+        ([clusterName, imageList]): ClusterEntity => ({
+          cluster_name: clusterName,
+          image_list: imageList!,
+        }),
+      ),
+    [moments],
+  );
+
+  return viewMode === "cluster" ? (
+    <ImageViewByCluster clusters={clusters} />
+  ) : (
+    <ImageViewByMoment clusters={imageResult} />
   );
 }
