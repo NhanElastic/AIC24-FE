@@ -8,8 +8,6 @@ export default function ImageResultView() {
   const [clusters] = useContext(ImageResultContext);
   const [viewMode, setViewMode] = useState<"moment" | "cluster">("moment");
 
-  console.log(clusters);
-
   return (
     <div className="flex flex-col gap-8">
       <div>

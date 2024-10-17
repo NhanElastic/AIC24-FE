@@ -14,5 +14,8 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
+  env: {
+    IMAGE_BASE_URL: "http://selab.nhtlongcs.com:20167/preview/",
+  }
 };
 export default config;

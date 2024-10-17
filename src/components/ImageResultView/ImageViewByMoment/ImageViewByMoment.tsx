@@ -1,5 +1,6 @@
 import { ClusterEntity } from "@/types/entities/cluster.type";
 import VideoThumbnailCard from "@/components/VideoThumbnailCard";
+import { getImageUrl } from "@/lib/utils";
 
 export interface ImageViewByMomentProps {
   clusters: ClusterEntity[];
@@ -15,8 +16,7 @@ export default function ImageViewByMoment({
           <VideoThumbnailCard
             key={image.id}
             title={image.id}
-            description={image.name}
-            thumbnailUrl={image.path}
+            thumbnailUrl={getImageUrl(image)}
           />
         )),
       )}

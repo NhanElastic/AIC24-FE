@@ -1,7 +1,6 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -11,20 +10,17 @@ import { Button } from "@/components/ui/button";
 
 export interface VideoThumbnailCardProps {
   title: string;
-  description: string;
   thumbnailUrl: string;
 }
 
 export default function VideoThumbnailCard({
   title,
-  description,
   thumbnailUrl,
 }: VideoThumbnailCardProps) {
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
-        {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
         <Image
@@ -32,7 +28,7 @@ export default function VideoThumbnailCard({
           alt=""
           width={320}
           height={180}
-          className="rounded-lg"
+          className="max-h-96 w-full rounded-lg"
         />
       </CardContent>
       <CardFooter className="grid grid-cols-2 gap-2">

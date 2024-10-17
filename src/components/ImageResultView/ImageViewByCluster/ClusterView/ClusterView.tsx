@@ -8,6 +8,7 @@ import {
 import { ClusterEntity } from "@/types/entities/cluster.type";
 import VideoThumbnailCard from "@/components/VideoThumbnailCard";
 import Link from "next/link";
+import { getImageUrl } from "@/lib/utils";
 
 export interface ClusterViewProps {
   cluster: ClusterEntity;
@@ -37,8 +38,7 @@ export default function ClusterView({ cluster }: ClusterViewProps) {
             <VideoThumbnailCard
               key={image.id}
               title={image.id}
-              description={image.name}
-              thumbnailUrl={image.path}
+              thumbnailUrl={getImageUrl(image)}
             />
           ))}
         </div>
