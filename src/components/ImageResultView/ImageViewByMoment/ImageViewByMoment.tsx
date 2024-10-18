@@ -7,7 +7,7 @@ export interface ImageViewByMomentProps {
   clusters: ClusterEntity[];
 }
 
-const momentsPerPage = 18;
+const momentsPerPage = 30;
 
 export default function ImageViewByMoment({
   clusters,
@@ -21,7 +21,7 @@ export default function ImageViewByMoment({
   console.log(pageNumber);
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
       {clusters
         .slice(startImagesIndex, endImagesIndex)
         .map((cluster) =>
