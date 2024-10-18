@@ -1,0 +1,350 @@
+import { Meta, StoryObj } from "@storybook/react";
+import ClusterView from "@/components/ImageResultView/ImageViewByCluster/ClusterView/index";
+
+const meta: Meta<typeof ClusterView> = {
+  component: ClusterView,
+  args: {
+    cluster: {
+      cluster_name: "L29_V011",
+      url: "https://youtube.com/watch?v=RilnkY0S9Ik",
+      image_list: [
+        {
+          id: "L29_V011/006174",
+          path: "L29/",
+          name: "L29_V011/006174",
+          time_in_seconds: 246960.0,
+        },
+        {
+          id: "L29_V011/006244",
+          path: "L29/",
+          name: "L29_V011/006244",
+          time_in_seconds: 249760.0,
+        },
+        {
+          id: "L29_V011/006209",
+          path: "L29/",
+          name: "L29_V011/006209",
+          time_in_seconds: 248360.0,
+        },
+        {
+          id: "L29_V011/006210",
+          path: "L29/",
+          name: "L29_V011/006210",
+          time_in_seconds: 248400.0,
+        },
+        {
+          id: "L29_V011/006191",
+          path: "L29/",
+          name: "L29_V011/006191",
+          time_in_seconds: 247640.0,
+        },
+        {
+          id: "L29_V011/006227",
+          path: "L29/",
+          name: "L29_V011/006227",
+          time_in_seconds: 249080.0,
+        },
+        {
+          id: "L29_V011/014054",
+          path: "L29/",
+          name: "L29_V011/014054",
+          time_in_seconds: 562160.0,
+        },
+        {
+          id: "L29_V011/014040",
+          path: "L29/",
+          name: "L29_V011/014040",
+          time_in_seconds: 561600.0,
+        },
+        {
+          id: "L29_V011/006262",
+          path: "L29/",
+          name: "L29_V011/006262",
+          time_in_seconds: 250480.0,
+        },
+        {
+          id: "L29_V011/013959",
+          path: "L29/",
+          name: "L29_V011/013959",
+          time_in_seconds: 558360.0,
+        },
+        {
+          id: "L29_V011/006280",
+          path: "L29/",
+          name: "L29_V011/006280",
+          time_in_seconds: 251200.0,
+        },
+        {
+          id: "L29_V011/014175",
+          path: "L29/",
+          name: "L29_V011/014175",
+          time_in_seconds: 567000.0,
+        },
+        {
+          id: "L29_V011/006327",
+          path: "L29/",
+          name: "L29_V011/006327",
+          time_in_seconds: 253080.0,
+        },
+        {
+          id: "L29_V011/014985",
+          path: "L29/",
+          name: "L29_V011/014985",
+          time_in_seconds: 599400.0,
+        },
+        {
+          id: "L29_V011/013669",
+          path: "L29/",
+          name: "L29_V011/013669",
+          time_in_seconds: 546760.0,
+        },
+        {
+          id: "L29_V011/015052",
+          path: "L29/",
+          name: "L29_V011/015052",
+          time_in_seconds: 602080.0,
+        },
+        {
+          id: "L29_V011/014866",
+          path: "L29/",
+          name: "L29_V011/014866",
+          time_in_seconds: 594640.0,
+        },
+        {
+          id: "L29_V011/006345",
+          path: "L29/",
+          name: "L29_V011/006345",
+          time_in_seconds: 253800.0,
+        },
+        {
+          id: "L29_V011/012678",
+          path: "L29/",
+          name: "L29_V011/012678",
+          time_in_seconds: 507120.0,
+        },
+        {
+          id: "L29_V011/014959",
+          path: "L29/",
+          name: "L29_V011/014959",
+          time_in_seconds: 598360.0,
+        },
+        {
+          id: "L29_V011/012690",
+          path: "L29/",
+          name: "L29_V011/012690",
+          time_in_seconds: 507600.0,
+        },
+        {
+          id: "L29_V011/015331",
+          path: "L29/",
+          name: "L29_V011/015331",
+          time_in_seconds: 613240.0,
+        },
+        {
+          id: "L29_V011/014149",
+          path: "L29/",
+          name: "L29_V011/014149",
+          time_in_seconds: 565960.0,
+        },
+        {
+          id: "L29_V011/014444",
+          path: "L29/",
+          name: "L29_V011/014444",
+          time_in_seconds: 577760.0,
+        },
+        {
+          id: "L29_V011/015390",
+          path: "L29/",
+          name: "L29_V011/015390",
+          time_in_seconds: 615600.0,
+        },
+        {
+          id: "L29_V011/013752",
+          path: "L29/",
+          name: "L29_V011/013752",
+          time_in_seconds: 550080.0,
+        },
+        {
+          id: "L29_V011/006423",
+          path: "L29/",
+          name: "L29_V011/006423",
+          time_in_seconds: 256920.0,
+        },
+        {
+          id: "L29_V011/025469",
+          path: "L29/",
+          name: "L29_V011/025469",
+          time_in_seconds: 1018760.0,
+        },
+        {
+          id: "L29_V011/015688",
+          path: "L29/",
+          name: "L29_V011/015688",
+          time_in_seconds: 627520.0,
+        },
+        {
+          id: "L29_V011/012825",
+          path: "L29/",
+          name: "L29_V011/012825",
+          time_in_seconds: 513000.0,
+        },
+        {
+          id: "L29_V011/019716",
+          path: "L29/",
+          name: "L29_V011/019716",
+          time_in_seconds: 788640.0,
+        },
+        {
+          id: "L29_V011/013649",
+          path: "L29/",
+          name: "L29_V011/013649",
+          time_in_seconds: 545960.0,
+        },
+        {
+          id: "L29_V011/014244",
+          path: "L29/",
+          name: "L29_V011/014244",
+          time_in_seconds: 569760.0,
+        },
+        {
+          id: "L29_V011/015699",
+          path: "L29/",
+          name: "L29_V011/015699",
+          time_in_seconds: 627960.0,
+        },
+        {
+          id: "L29_V011/013711",
+          path: "L29/",
+          name: "L29_V011/013711",
+          time_in_seconds: 548440.0,
+        },
+        {
+          id: "L29_V011/012747",
+          path: "L29/",
+          name: "L29_V011/012747",
+          time_in_seconds: 509880.0,
+        },
+        {
+          id: "L29_V011/014310",
+          path: "L29/",
+          name: "L29_V011/014310",
+          time_in_seconds: 572400.0,
+        },
+        {
+          id: "L29_V011/006480",
+          path: "L29/",
+          name: "L29_V011/006480",
+          time_in_seconds: 259200.0,
+        },
+        {
+          id: "L29_V011/019710",
+          path: "L29/",
+          name: "L29_V011/019710",
+          time_in_seconds: 788400.0,
+        },
+        {
+          id: "L29_V011/013731",
+          path: "L29/",
+          name: "L29_V011/013731",
+          time_in_seconds: 549240.0,
+        },
+        {
+          id: "L29_V011/015119",
+          path: "L29/",
+          name: "L29_V011/015119",
+          time_in_seconds: 604760.0,
+        },
+        {
+          id: "L29_V011/014434",
+          path: "L29/",
+          name: "L29_V011/014434",
+          time_in_seconds: 577360.0,
+        },
+        {
+          id: "L29_V011/006518",
+          path: "L29/",
+          name: "L29_V011/006518",
+          time_in_seconds: 260720.0,
+        },
+        {
+          id: "L29_V011/013690",
+          path: "L29/",
+          name: "L29_V011/013690",
+          time_in_seconds: 547600.0,
+        },
+        {
+          id: "L29_V011/013769",
+          path: "L29/",
+          name: "L29_V011/013769",
+          time_in_seconds: 550760.0,
+        },
+        {
+          id: "L29_V011/015710",
+          path: "L29/",
+          name: "L29_V011/015710",
+          time_in_seconds: 628400.0,
+        },
+        {
+          id: "L29_V011/015145",
+          path: "L29/",
+          name: "L29_V011/015145",
+          time_in_seconds: 605800.0,
+        },
+        {
+          id: "L29_V011/025437",
+          path: "L29/",
+          name: "L29_V011/025437",
+          time_in_seconds: 1017480.0,
+        },
+        {
+          id: "L29_V011/015255",
+          path: "L29/",
+          name: "L29_V011/015255",
+          time_in_seconds: 610200.0,
+        },
+        {
+          id: "L29_V011/016098",
+          path: "L29/",
+          name: "L29_V011/016098",
+          time_in_seconds: 643920.0,
+        },
+        {
+          id: "L29_V011/015655",
+          path: "L29/",
+          name: "L29_V011/015655",
+          time_in_seconds: 626200.0,
+        },
+        {
+          id: "L29_V011/012420",
+          path: "L29/",
+          name: "L29_V011/012420",
+          time_in_seconds: 496800.0,
+        },
+        {
+          id: "L29_V011/016051",
+          path: "L29/",
+          name: "L29_V011/016051",
+          time_in_seconds: 642040.0,
+        },
+        {
+          id: "L29_V011/018225",
+          path: "L29/",
+          name: "L29_V011/018225",
+          time_in_seconds: 729000.0,
+        },
+        {
+          id: "L29_V011/006470",
+          path: "L29/",
+          name: "L29_V011/006470",
+          time_in_seconds: 258800.0,
+        },
+      ],
+    },
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ClusterView>;
+
+export const Default: Story = {};

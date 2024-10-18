@@ -8,18 +8,22 @@ import {
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ImageEntity } from "@/types/entities/image.type";
-import { getImageUrl } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 
 export interface VideoThumbnailCardProps {
   image: ImageEntity;
+  hideTitle?: boolean;
+  className?: string;
 }
 
-export default function ImageMomentCard({ image }: VideoThumbnailCardProps) {
+export default function ImageMomentCard({
+  image,
+  hideTitle = false,
+  className,
+}: VideoThumbnailCardProps) {
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>{image.id}</CardTitle>
-      </CardHeader>
+    <Card className={cn("w-full", className)}>
+      <CardHeader>{!hideTitle && <CardTitle>{image.id}</CardTitle>}</CardHeader>
 
       <CardContent>
         <Image

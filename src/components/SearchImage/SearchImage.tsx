@@ -15,10 +15,13 @@ export const searchOptions = [
   { label: "Feedback", value: "feedback" },
 ];
 
-export const searchModes = [
+export const searchModes: {
+  label: string;
+  value: "moment" | "cluster" | "location";
+}[] = [
   { label: "Moment", value: "moment" },
-  { label: "Cluster", value: "cluster" },
-  { label: "Video", value: "location" },
+  { label: "Video", value: "cluster" },
+  { label: "Video - Images", value: "location" },
 ];
 
 export default function SearchImage() {
@@ -34,11 +37,12 @@ export default function SearchImage() {
   const { register, watch, handleSubmit } = form;
 
   const fetchSearchResults = async () => {
-    const result = await fetchImagesByText(watch("text"));
+    const result = await fetchImagesByText(watch("mode"), watch("text"));
+    console.log(result);
     setSearchResults(result);
   };
 
-  const onSubmit: SubmitHandler<SearchTextDto> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<SearchTextDto> = () => fetchSearchResults();
 
   return (
     <Form {...form}>

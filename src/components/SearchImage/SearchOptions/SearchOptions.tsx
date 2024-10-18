@@ -24,7 +24,7 @@ export default function SearchOptions({
 }: SearchOptionsProps) {
   return (
     <Select {...props}>
-      <SelectTrigger className={cn("min-w-28", className)}>
+      <SelectTrigger className={cn("w-36", className)}>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

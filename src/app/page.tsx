@@ -2,17 +2,24 @@
 
 import SearchImage from "@/components/SearchImage";
 import NavBar from "@/components/NavBar";
-import { ImageResultContext } from "@/contexts/ImageResultContext";
-import { Dispatch, SetStateAction, useMemo, useState } from "react";
-import { ClusterEntity } from "@/types/entities/cluster.type";
+import {
+  ImageResultContext,
+  ImageResultContextType,
+} from "@/contexts/ImageResultContext";
+import { useMemo, useState } from "react";
 import ImageResultView from "@/components/ImageResultView";
+import { SearchTextResponse } from "@/types/dtos/search-text.type";
 
 export default function Home() {
-  const [imageResult, setImageResult] = useState<ClusterEntity[]>([]);
+  const [imageResult, setImageResult] = useState<SearchTextResponse>({
+    mode: "moment",
+    clusters: [],
+  });
 
-  const imageResultMemo = useMemo<
-    [ClusterEntity[], Dispatch<SetStateAction<ClusterEntity[]>>]
-  >(() => [imageResult, setImageResult], [imageResult, setImageResult]);
+  const imageResultMemo = useMemo<ImageResultContextType>(
+    () => [imageResult, setImageResult],
+    [imageResult, setImageResult],
+  );
 
   return (
     <>
