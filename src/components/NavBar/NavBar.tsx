@@ -16,7 +16,7 @@ export default function NavBar({ className }: NavBarProps) {
     >
       <div
         className={cn(
-          "flex w-full max-w-screen-lg items-center justify-between gap-4 p-4 xl:max-w-screen-xl",
+          "flex w-full max-w-screen-lg items-center justify-between gap-4 p-4 xl:max-w-screen-xl 2xl:max-w-screen-2xl",
         )}
       >
         <b className="lg:text-2xl">Advanced Video Browsing System</b>

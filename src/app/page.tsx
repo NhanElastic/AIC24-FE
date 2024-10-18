@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <NavBar />
       <div className="flex justify-center">
-        <div className="flex w-full max-w-screen-lg flex-col gap-4 p-4 xl:max-w-screen-xl">
+        <div className="flex w-full max-w-screen-lg flex-col gap-4 p-4 2xl:max-w-screen-2xl">
           <ImageResultContext.Provider value={imageResultMemo}>
             <SearchImage />
             <ImageResultView />

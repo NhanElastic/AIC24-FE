@@ -17,6 +17,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import RelevantImagesDialog from "@/components/ImageResultView/RelevantImagesDialog";
+import VideoDialog from "@/components/ImageResultView/ImageCard/VideoDialog";
 
 export interface VideoThumbnailCardProps {
   image: ImageEntity;
@@ -36,14 +37,17 @@ export default function ImageCard({
       </CardHeader>
 
       <CardContent>
-        <Image
-          src={getImageUrl(image)}
-          alt=""
-          width={320}
-          height={180}
-          className="max-h-96 w-full rounded-lg"
-          loading="lazy"
-        />
+        <div className="relative">
+          <Image
+            src={getImageUrl(image)}
+            alt=""
+            width={320}
+            height={180}
+            className="max-h-96 w-full rounded-lg"
+            loading="lazy"
+          />
+          <VideoDialog image={image} className="absolute right-2 top-2" />
+        </div>
       </CardContent>
 
       <CardFooter className="grid grid-cols-2 gap-2">
