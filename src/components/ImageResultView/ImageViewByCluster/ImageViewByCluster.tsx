@@ -29,8 +29,8 @@ export default function ImageViewByCluster({
 
       <PaginationBar
         totalPage={totalPage}
-        currentPage={pageNumber}
         onPageChange={setPageNumber}
+        className="self-center"
       />
     </div>
   );

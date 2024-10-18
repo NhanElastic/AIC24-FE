@@ -1,25 +1,12 @@
 import Image from "next/image";
 import PtnkLogo from "@/public/ptnk-logo-1600.webp";
 import { cn } from "@/lib/utils";
-import type { VariantProps } from "class-variance-authority";
-import { cva, cx } from "class-variance-authority";
 
-export const navBarBreakpoints = cva("", {
-  variants: {
-    size: {
-      md: "max-w-screen-md",
-      lg: "max-w-screen-lg",
-      xl: "max-w-screen-xl",
-      "2xl": "max-w-screen-2xl",
-    },
-  },
-});
-
-export interface NavBarProps extends VariantProps<typeof navBarBreakpoints> {
+export interface NavBarProps {
   className?: string;
 }
 
-export default function NavBar({ className, size }: NavBarProps) {
+export default function NavBar({ className }: NavBarProps) {
   return (
     <div
       className={cn(
@@ -29,8 +16,7 @@ export default function NavBar({ className, size }: NavBarProps) {
     >
       <div
         className={cn(
-          "flex w-full items-center justify-between gap-4 p-4",
-          cx(navBarBreakpoints({ size })),
+          "flex w-full max-w-screen-lg items-center justify-between gap-4 p-4 xl:max-w-screen-xl",
         )}
       >
         <b className="lg:text-2xl">Advanced Video Browsing System</b>

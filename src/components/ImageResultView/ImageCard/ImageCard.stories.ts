@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import ImageMomentCard from "@/components/ImageMomentCard/index";
+import ImageCard from "@/components/ImageResultView/ImageCard/index";
 
-const meta: Meta<typeof ImageMomentCard> = {
-  component: ImageMomentCard,
+const meta: Meta<typeof ImageCard> = {
+  component: ImageCard,
   parameters: {
     layout: "centered",
   },
@@ -20,6 +20,6 @@ const meta: Meta<typeof ImageMomentCard> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ImageMomentCard>;
+type Story = StoryObj<typeof ImageCard>;
 
 export const Default: Story = {};

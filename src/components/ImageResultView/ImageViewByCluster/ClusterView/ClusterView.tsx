@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ClusterEntity } from "@/types/entities/cluster.type";
-import ImageMomentCard from "../../../ImageMomentCard";
+import ImageCard from "../../ImageCard";
 import Link from "next/link";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
@@ -39,9 +39,9 @@ export default function ClusterView({ cluster }: ClusterViewProps) {
 
       <CardContent>
         <ScrollArea>
-          <div className="flex">
+          <div className="flex gap-2">
             {cluster.image_list.map((image) => (
-              <ImageMomentCard
+              <ImageCard
                 hideTitle
                 key={image.id}
                 image={image}

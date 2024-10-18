@@ -9,6 +9,14 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ImageEntity } from "@/types/entities/image.type";
 import { cn, getImageUrl } from "@/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import RelevantImagesDialog from "@/components/ImageResultView/RelevantImagesDialog";
 
 export interface VideoThumbnailCardProps {
   image: ImageEntity;
@@ -16,14 +24,16 @@ export interface VideoThumbnailCardProps {
   className?: string;
 }
 
-export default function ImageMomentCard({
+export default function ImageCard({
   image,
   hideTitle = false,
   className,
 }: VideoThumbnailCardProps) {
   return (
     <Card className={cn("w-full", className)}>
-      <CardHeader>{!hideTitle && <CardTitle>{image.id}</CardTitle>}</CardHeader>
+      <CardHeader className="py-4">
+        {!hideTitle && <CardTitle className="text-base">{image.id}</CardTitle>}
+      </CardHeader>
 
       <CardContent>
         <Image
@@ -37,8 +47,9 @@ export default function ImageMomentCard({
       </CardContent>
 
       <CardFooter className="grid grid-cols-2 gap-2">
-        <Button>Submit</Button>
-        <Button variant="secondary">Find similarity</Button>
+        <Button className="h-full">Submit</Button>
+
+        <RelevantImagesDialog image={image} />
       </CardFooter>
     </Card>
   );

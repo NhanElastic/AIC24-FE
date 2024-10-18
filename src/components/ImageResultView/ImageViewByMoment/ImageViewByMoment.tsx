@@ -1,4 +1,4 @@
-import ImageMomentCard from "../../ImageMomentCard";
+import ImageCard from "../ImageCard";
 import { useState } from "react";
 import PaginationBar from "@/components/ImageResultView/PaginationBar";
 import { ClusterEntity } from "@/types/entities/cluster.type";
@@ -18,20 +18,21 @@ export default function ImageViewByMoment({
   const startImagesIndex = (pageNumber - 1) * momentsPerPage;
   const endImagesIndex = Math.min(pageNumber * momentsPerPage, clusters.length);
 
+  console.log(pageNumber);
+
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {clusters
         .slice(startImagesIndex, endImagesIndex)
         .map((cluster) =>
           cluster.image_list.map((image) => (
-            <ImageMomentCard key={image.id} image={image} />
+            <ImageCard key={image.id} image={image} />
           )),
         )}
 
       <PaginationBar
-        className="sm:col-span-2 lg:col-span-3"
+        className="self-center sm:col-span-2 lg:col-span-3"
         totalPage={totalPage}
-        currentPage={pageNumber}
         onPageChange={setPageNumber}
       />
     </div>

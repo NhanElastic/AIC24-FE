@@ -6,9 +6,7 @@ import ImageViewByMoment from "@/components/ImageResultView/ImageViewByMoment/Im
 export default function ImageResultView() {
   const [{ mode, clusters }] = useContext(ImageResultContext);
 
-  console.log(clusters);
-
-  return mode === "cluster" ? (
+  return mode === "location" ? (
     <ImageViewByCluster clusters={clusters} />
   ) : (
     <ImageViewByMoment clusters={clusters} />

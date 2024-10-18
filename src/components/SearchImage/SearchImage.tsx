@@ -17,10 +17,9 @@ export const searchOptions = [
 
 export const searchModes: {
   label: string;
-  value: "moment" | "cluster" | "location";
+  value: "moment" | "location";
 }[] = [
   { label: "Moment", value: "moment" },
-  { label: "Video", value: "cluster" },
   { label: "Video - Images", value: "location" },
 ];
 
@@ -38,7 +37,6 @@ export default function SearchImage() {
 
   const fetchSearchResults = async () => {
     const result = await fetchImagesByText(watch("mode"), watch("text"));
-    console.log(result);
     setSearchResults(result);
   };
 
